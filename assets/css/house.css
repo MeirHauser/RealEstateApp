@@ -1,0 +1,65 @@
+td {
+  word-wrap:break-word;
+  word-break:break-word;
+}
+
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+    margin-top: 30px;
+}
+
+h2{
+	text-align: center;
+}
+#house_table{
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+	margin-left: 15%;
+	margin-right: 10%;
+	margin-top: 30px;
+}
+
+img{
+	height: 200px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+#a{
+	height: 400px;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 30px;
+}
+
+.container{
+	background-color: lightgray;
+	height: 650px;
+}
+
+#delete_button{
+	margin-left: 45%;
+	margin-bottom: 20px;
+}
+#all_houses{
+	float: right;
+	margin-right: 5%;
+	margin-bottom: 10px;
+}
+#add_house{
+	margin-left: 45%;
+	margin-top: 15px;
+}
+.panel-group{
+	margin-top: 50px;
+	width: 50%;
+	margin-left: 25%;
+}
+#submit_button{
+	margin-left: 67%;
+}
+#blue{
+	background-color: #337ab7;
+}
