@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "houses";
 $route['all_houses'] = "houses/index";
 $route['new'] = "houses/new_house";
 $route['submit_house'] = "houses/submit_house";
