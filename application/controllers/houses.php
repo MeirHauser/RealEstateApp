@@ -21,17 +21,6 @@ class Houses extends CI_Controller {
 	{
 		$this->load->view('angularHouses');
 	}
-	public function all_houses()
-	{
-		$this->session->set_userdata('user_id', 1);
-		$user_id = $this->session->userdata('user_id');
-		$this->load->model('house');
-		$houses = $this->house->get_all_houses($user_id);
-		$info = array(
-			'houses' => $houses
-			);
-		$this->load->view('houses', $info);
-	}
 	public function new_house()
 	{
 		$this->load->view('new');
