@@ -19,6 +19,10 @@ class Houses extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->view('angularHouses');
+	}
+	public function all_houses()
+	{
 		$this->session->set_userdata('user_id', 1);
 		$user_id = $this->session->userdata('user_id');
 		$this->load->model('house');
@@ -27,10 +31,6 @@ class Houses extends CI_Controller {
 			'houses' => $houses
 			);
 		$this->load->view('houses', $info);
-	}
-	public function yo()
-	{
-		echo 'hey';
 	}
 	public function new_house()
 	{
@@ -41,7 +41,7 @@ class Houses extends CI_Controller {
 		$house = $this->input->post();
 		$this->load->model('house');
 		$this->house->add_house($house);
-		redirect('/all_houses');
+		redirect('/angular');
 	}
 	public function house($house_id)
 	{
@@ -57,6 +57,22 @@ class Houses extends CI_Controller {
 		$this->load->model('house');
 		$this->house->delete_house($house_id);
 		redirect('/all_houses');
+	}
+	public function angular()
+	{
+		$this->load->view('angularHouses');
+	}
+	public function angularhouses()
+	{
+		$this->load->model('house');
+		$houses = $this->house->get_all_houses(1);
+		echo json_encode($houses);
+	}
+	public function angularDelete($house_id)
+	{
+		$this->load->model('house');
+		$this->house->delete_house($house_id); 
+		echo json_encode($house_id);
 	}
 }
 

@@ -44,6 +44,9 @@ $route['new'] = "houses/new_house";
 $route['submit_house'] = "houses/submit_house";
 $route['house/(:any)'] = "houses/house/$1";
 $route['delete/(:any)'] = "houses/delete/$1";
+$route['angular'] = "houses/angular";
+$route['angularhouses'] = "houses/angularhouses";
+$route['angular/delete/(:any)'] = "houses/angularDelete/$1";
 $route['404_override'] = '';
 
 

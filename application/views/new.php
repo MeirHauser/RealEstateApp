@@ -18,50 +18,55 @@
       });
   });
   </script>
-	<style type="text/css">
-	</style>
 </head>
 <body>
+  <?php include(dirname(__FILE__).'/partials/header.html'); ?>
 	<div class="container">
 		<h2>Add A House</h2>
   	<form action ='submit_house' method = 'post'>
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
-          <div class="panel-heading">
+          <div class="panel-heading accordian_heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Location</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class = 'white px'>Location</a>
             </h4>
           </div>
           <div id="collapse1" class="panel-collapse collapse in">
             <div class="panel-body">
-          	  <p>Address:</p>
-  			      <input type = 'text' name = 'address'>
-  		        <p>City:</p>
-  			      <input type = 'text' name = 'city'>
-    			    <p>State:</p>
-    			    <input type = 'text' name = 'state'>
+              <div class="form-group">
+                <label for="address">Address:</label>
+    			      <input type = 'text' name = 'address' class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="city">City:</label>
+  			        <input type = 'text' name = 'city' class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="state">State:</label>
+    			      <input type = 'text' name = 'state' class="form-control">
+              </div> 
             </div>
           </div>
         </div>
         <div class="panel panel-default">
-          <div class="panel-heading">
+          <div class="panel-heading accordian_heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Kitchen</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class = 'white px'>Kitchen</a>
             </h4>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <div class="panel-body">
             	<p>Style:</p>
-    			    <input type = 'text' name = 'kitchen_style'>
+    			    <input type = 'text' name = 'kitchen_style' class="form-control">
     		      <p>Size:</p>
-    			    <input type = 'text' name = 'kitchen_size'>
+    			    <input type = 'text' name = 'kitchen_size' class="form-control">
         	  </div>
           </div>
         </div>
         <div class="panel panel-default">
-          <div class="panel-heading">
+          <div class="panel-heading accordian_heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Bedroom</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class = 'white px'>Bedroom</a>
             </h4>
           </div>
           <div id="collapse3" class="panel-collapse collapse">
@@ -74,9 +79,9 @@
           </div>
         </div>
         <div class="panel panel-default">
-          <div class="panel-heading">
+          <div class="panel-heading accordian_heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Yards</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class = 'white px'>Yards</a>
             </h4>
           </div>
           <div id="collapse4" class="panel-collapse collapse">
@@ -89,9 +94,9 @@
           </div>
         </div>
         <div class="panel panel-default">
-          <div class="panel-heading">
+          <div class="panel-heading accordian_heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Miscellaneous</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" class = 'white px'>Miscellaneous</a>
             </h4>
           </div>
           <div id="collapse5" class="panel-collapse collapse">
@@ -106,9 +111,9 @@
           </div>
         </div>
         <div class="panel panel-default">
-          <div class="panel-heading">
+          <div class="panel-heading accordian_heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Further Comments</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse6" class = 'white px'>Further Comments</a>
             </h4>
           </div>
           <div id="collapse6" class="panel-collapse collapse">
@@ -121,7 +126,7 @@
       </div>
       <input type = 'submit' value = 'Add House' id = 'submit_button' class ='btn-success'>
     </form>
-    <a href="/all_houses" id = 'all_houses'>Back to Houses</a>
   </div>
+  <?php include(dirname(__FILE__).'/partials/footer.html'); ?>
 </body>
 </html>
