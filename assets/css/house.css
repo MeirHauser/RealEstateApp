@@ -103,8 +103,6 @@ img{
 	margin-top: 200px;
 }
 
-
-
 .google_image{
 	display: inline;
 	width: 60px;
@@ -124,64 +122,11 @@ img{
 	margin-top: 30px;
 }
 
-.panel-group{
-	margin-top: 50px;
-	width: 50%;
-	margin-left: 25%;
-}
-
-.panel-group .px{
-	font-size: 20px !important;
-}
-
-#submit_button{
-	margin-left: 67%;
-}
-
-
-
-.white{
-	color: white !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#search_box{
-	width: 300px;
-	margin-left: 0px;
-	margin-top: 10px;
-}
-
-#search_box input{
-	display: inline;
-	width: 200px;
-	margin-left: 5px;
-}
-
-#search_box span{
-	font-size: 22px;
-	margin-left: 5px;
-	color: #337ab7;
-}
-
 .navbar{
 	background-color: rgba(169, 68, 66, 0.84);
 	height: auto;
 	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
 .navbar a{
@@ -209,8 +154,6 @@ img{
 
 .navbar-brand,
 .navbar-nav li a {
-    line-height: 80px;
-    height: 80px;
     padding-top: 0;
     font-weight: bolder;
 }
@@ -218,6 +161,43 @@ img{
 .navbar-inner {
     min-height: 0px;
 }
+
+.panel-group{
+	margin-top: 50px;
+	width: 50%;
+	margin-left: 25%;
+}
+
+.panel-group .px{
+	font-size: 20px !important;
+}
+
+#search_box{
+	width: 300px;
+	margin-left: 0px;
+	margin-top: 10px;
+}
+
+#search_box input{
+	display: inline;
+	width: 200px;
+	margin-left: 5px;
+}
+
+#search_box span{
+	font-size: 22px;
+	margin-left: 5px;
+	color: #337ab7;
+}
+
+#submit_button{
+	margin-left: 67%;
+}
+
+.white{
+	color: white !important;
+}
+
 
 @media (max-width: 480px) {
 
