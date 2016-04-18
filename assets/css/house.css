@@ -214,7 +214,41 @@ img{
 
 	.panel-group{
 		width: 100%;
-		margin-left: 0%;
+		margin: auto;
 	}	
 
 }
+
+@media (max-width: 768px) {
+	.panel-group{
+		width: 100%;
+		margin: auto;
+	}
+
+	.navbar #logo{
+	font-family: monospace;
+	font-weight: 300;
+	font-size: 22px;
+	}
+
+}
+
+@media (max-width: 1009px) {
+	.navbar a{
+	color: white;
+	font-size: 13px;
+	font-weight: normal;
+	}
+
+	.navbar #logo{
+	font-family: monospace;
+	font-weight: normal;
+	font-size: 19px;
+	}
+
+	.navbar .glyphicon{
+		margin-right: 7px;
+	}
+}
+
+

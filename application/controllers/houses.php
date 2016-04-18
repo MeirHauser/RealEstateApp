@@ -28,8 +28,10 @@ class Houses extends CI_Controller {
 	public function submit_house()
 	{
 		$house = $this->input->post();
+		//var_dump($house);
 		$this->load->model('house');
-		$this->house->add_house($house);
+		$house_id = $this->house->add_house($house);
+		//var_dump($house_id);
 		redirect('/angular');
 	}
 	public function house($house_id)

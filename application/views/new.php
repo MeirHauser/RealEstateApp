@@ -8,16 +8,46 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script>
-  $(function() {
-    $( "#accordion" ).accordion();
-    $( "input[type=submit]" )
-      .button()
-      .click(function( event ) {
-        event.preventDefault();
+	<script type="text/javascript">
+    $(document).ready(function(){
+      var bedroom_counter = 1;
+      $(".glyphicon-plus").click(function(){
+        bedroom_counter ++;
+        $('#add_bedroom').before('<div class="form-group"><label for="bedroom_' + bedroom_counter + '">Bedroom ' + bedroom_counter + ' Details:</label><input type = "text" name = "bedroom_' + bedroom_counter + '_details" class="form-control"></div>');
+        $('#bedroom_body').find("div:nth-last-child(3)").hide().slideDown();
+        console.log(bedroom_counter);
       });
-  });
+
+      jquerySlideDown = function(element)
+      {
+          $('#' + element ).hide().slideDown();
+      }
+
+      jquerySlideUp = function()
+      {
+          $('#other').slideUp();
+      }
+
+    });
   </script>
+  <script type="text/javascript">
+    function CheckColors(val){
+      var select=document.getElementById('select');
+      var element=document.getElementById('other');
+      if(val=='other'){
+        //element.style.display='block';
+        element.name = 'heating';
+        select.name = '';
+        jquerySlideDown('other');
+      }
+      else {
+        jquerySlideUp();
+        //element.style.display='none';
+        select.name = 'heating';
+        element.name = '';
+      }
+    }
+  </script> 
 </head>
 <body>
   <?php include(dirname(__FILE__).'/partials/header.html'); ?>
@@ -51,62 +81,111 @@
         <div class="panel panel-default">
           <div class="panel-heading accordian_heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class = 'white px'>Kitchen</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class = 'white px'>General Details</a>
             </h4>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <div class="panel-body">
-            	<p>Style:</p>
-    			    <input type = 'text' name = 'kitchen_style' class="form-control">
-    		      <p>Size:</p>
-    			    <input type = 'text' name = 'kitchen_size' class="form-control">
-        	  </div>
+              <div class="form-group">
+                <label for="square_footage">Sqaure Footage:</label>
+                <input type = 'number' name = 'square_footage' class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="year_built">Year Built:</label>
+                <input type = 'number' name = 'year_built' class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="heating">Heating</label>
+                <select class="form-control" name = 'heating' onchange = 'CheckColors(this.value)' id = 'select'>
+                  <option value="forced air">Forced Air</option>
+                  <option value="radiator">Radiator</option>
+                  <option value='other'>Other</option>
+                </select>
+                <input class="form-control" type="text" name="" id="other" style='display:none; margin-top:10px;' placeholder = 'other'>
+              </div>
+              <div class="form-group">
+                <label for="cooling">Cooling</label>
+                <select class="form-control" name = 'cooling' onchange = 'CheckCooling(this.value)'>
+                  <option value="central air">Central Air</option>
+                  <option value="window unit">Window Unit</option>
+                  <option value='other'>Other</option>
+                </select>
+                <input class="form-control" type="text" name="" style='display:none; margin-top:10px;' placeholder = 'other'>
+              </div>
+              <div class="form-group">
+                <label for="comment">Further Comments:</label>
+                <textarea class="form-control" rows="3" cols = '10' name = 'general_comments'></textarea>
+              </div>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading accordian_heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class = 'white px'>Bedroom</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class = 'white px'>Kitchen</a>
             </h4>
           </div>
           <div id="collapse3" class="panel-collapse collapse">
             <div class="panel-body">
-            	<p>Size:</p>
-    			    <input type = 'text' name = 'bedroom_size'>
-    			    <p>Number:</p>
-    			    <input type = 'number' name = 'bedroom_number'>
+              <div class="form-group">
+                <label for="kitchen_style">Style:</label>
+                <input type = 'text' name = 'kitchen_style' class="form-control">
+              </div>
+            	<div class="form-group">
+                <label for="kitchen_size">Size:</label>
+                <input type = 'text' name = 'kitchen_size' class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="comment">Further Comments:</label>
+                <textarea class="form-control" rows="3" cols = '10' name = 'kitchen_comments'></textarea>
+              </div>
         	  </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading accordian_heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class = 'white px'>Yards</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class = 'white px'>Bedrooms</a>
             </h4>
           </div>
           <div id="collapse4" class="panel-collapse collapse">
-            <div class="panel-body">
-            	<p>Front Yard:</p>
-        			<input type = 'text' name = 'front_yard'>
-        			<p>Backyard:</p>
-        			<input type = 'text' name = 'backyard'>
+            <div class="panel-body" id ="bedroom_body">
+              <div class="form-group">
+                <label for="state">Number:</label>
+                <input type = 'number' name = 'bedroom_number' class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="bedroom_1">Bedroom 1 Details:</label>
+                <input type = 'text' name = 'bedroom_1_details' class="form-control">
+              </div>
+              <p class = 'text-primary' id = 'add_bedroom'><span id = 'yo' class="glyphicon glyphicon-plus text-primary"></span>add bedroom</p>
+              <div class="form-group">
+                <label for="bedroom_comments">Further Comments:</label>
+                <textarea class="form-control" rows="3" cols = '10' name = 'bedroom_comments'></textarea>
+              </div>
         	  </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading accordian_heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" class = 'white px'>Miscellaneous</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" class = 'white px'>Yards</a>
             </h4>
           </div>
           <div id="collapse5" class="panel-collapse collapse">
             <div class="panel-body">
-            	<p>Sqaure Footage:</p>
-        			<input type = 'number' name = 'square_footage'>
-        			<p>Year Built:</p>
-        			<input type = 'number' name = 'year_built'>
-        			<p>Heating:</p>
-    			    <input type = 'text' name = 'heating'>
+              <div class="form-group">
+                <label for="front_yard">Front Yard:</label>
+                <input type = 'text' name = 'front_yard' class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="backyard:">Backyard:</label>
+                <input type = 'text' name = 'backyard' class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="comment">Further Comments:</label>
+                <textarea class="form-control" rows="3" cols = '10' name = 'yard_comments'></textarea>
+              </div>
         	  </div>
           </div>
         </div>
@@ -118,8 +197,10 @@
           </div>
           <div id="collapse6" class="panel-collapse collapse">
             <div class="panel-body">
-            	<p>Comments:</p>
-    		      <textarea rows="4" cols="50" name = 'comments'></textarea>
+              <div class="form-group">
+                <label for="comment">Comments:</label>
+                <textarea class="form-control" rows="5" name = 'comments'></textarea>
+              </div>
         	  </div>
           </div>
         </div>
