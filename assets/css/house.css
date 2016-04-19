@@ -1,3 +1,9 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 td {
   word-wrap:break-word;
   word-break:break-word;
@@ -37,21 +43,28 @@ img{
 
 #all_houses{
 	float: right;
-	margin-right: 5%;
+	/*margin-right: 5%;*/
 	margin-bottom: 10px;
 }
 
 .all_houses{
 	width: 100%;
 	margin: auto;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
-.all_houses div{
-	width: 250px;
+.all_houses .house{
+	/*width: 250px;*/
 	border: 2px solid black;
 	padding: 0px;
-	margin-left: 20px;
+	/*margin-left: 20px;*/
 	margin-top: 10px;	
+	margin: auto;
+	display: inline-block;
+	text-align: left;
+	margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .all_houses div div{
@@ -155,7 +168,6 @@ img{
 .navbar-brand,
 .navbar-nav li a {
     padding-top: 0;
-    font-weight: bolder;
 }
 
 .navbar-inner {
@@ -164,8 +176,8 @@ img{
 
 .panel-group{
 	margin-top: 50px;
-	width: 50%;
-	margin-left: 25%;
+	width: 600px;
+	margin: auto;
 }
 
 .panel-group .px{
@@ -201,29 +213,21 @@ img{
 
 @media (max-width: 480px) {
 
-	.all_houses div{
-		margin-top: 1px;
-		width: auto;
-	}
-
-	.all_houses div p{
-		padding-top: 1px;
-		padding-bottom: 1px;
-
-	}
-
 	.panel-group{
 		width: 100%;
 		margin: auto;
 	}	
 
 }
-
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 	.panel-group{
 		width: 100%;
 		margin: auto;
 	}
+
+}
+
+@media (max-width: 768px) {
 
 	.navbar #logo{
 	font-family: monospace;
@@ -233,22 +237,58 @@ img{
 
 }
 
-@media (max-width: 1009px) {
+@media (max-width: 920px) {
 	.navbar a{
 	color: white;
-	font-size: 13px;
 	font-weight: normal;
+	font-size: 13px;
 	}
 
 	.navbar #logo{
 	font-family: monospace;
 	font-weight: normal;
-	font-size: 19px;
 	}
 
 	.navbar .glyphicon{
 		margin-right: 7px;
 	}
+}
+/*mobile*/
+@media only screen and (max-width: 479px) {
+    .twelve-s { width: 100%; }
+    .all_houses{
+    	padding: 0px;
+    }
+    .all_houses .house{
+    	margin-right: 0px;
+    	margin-bottom: 0px;
+    }
+
+}
+
+@media only screen and (min-width: 480px) {
+    .twelve-s { width: 80%; }
+
+}
+/*tablet*/
+@media only screen and (min-width: 531px) {
+    .six-m { width: 49%; }
+}
+/* Small laptop screens */
+@media only screen and (min-width: 768px) {
+    .four-l { width: 32%; }
+}
+/* Medium laptop screens */
+@media only screen and (min-width: 1000px) {
+    .three-l { width: 24.5%; }
+    .all_houses .house{
+    	margin-right: 5px;
+    	margin-bottom: 5px;
+    }
+}
+/* Large laptop screens */
+@media only screen and (min-width: 1200px) {
+  
 }
 
 

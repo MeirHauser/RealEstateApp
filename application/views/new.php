@@ -51,7 +51,7 @@
 </head>
 <body>
   <?php include(dirname(__FILE__).'/partials/header.html'); ?>
-	<div class="container">
+	<div id="container">
 		<h2>Add A House</h2>
   	<form action ='submit_house' method = 'post'>
       <div class="panel-group" id="accordion">

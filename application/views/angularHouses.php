@@ -14,13 +14,13 @@
 </head>
 <body>
   <?php include(dirname(__FILE__).'/partials/header.html'); ?> 
-  <div class="container" ng-controller = 'HouseController' id = 'container_main_page'>
+  <div class="" ng-controller = 'HouseController' id = 'container_main_page'>
     <div class="form-group" id = 'search_box'>
       <input type = 'text' ng-model="house_name" class="form-control input-m" placeholder = 'Search Houses'>
       <span class="glyphicon glyphicon-search">
     </div> 
-    <div class="row all_houses">
-      <div class="col-lg-3 col-sm-4 boo"  ng-repeat="house in houses | filter:house_name | orderBy:'created_at':true">
+    <div class="all_houses">
+      <div class="twelve-s six-m four-l three-l house"  ng-repeat="house in houses | filter:house_name | orderBy:'created_at':true">
         <h4 class = 'bg-primary white'>{{ house.address }}
           <a href>
             <span class="glyphicon glyphicon-remove" ng-click='removeHouse(house.ID)'></span>
