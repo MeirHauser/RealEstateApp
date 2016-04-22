@@ -1,5 +1,6 @@
-var my_app = angular.module('my_app', []);
+var my_app = angular.module('my_app', ['ngRoute']);
 
+//  build factories
 my_app.factory('HouseFactory', function($http){
   var factory = {};
   var houses;
@@ -19,6 +20,7 @@ my_app.factory('HouseFactory', function($http){
   return factory;
 });
 
+//  build controllers
 my_app.controller('HouseController', function($scope, HouseFactory) {
   HouseFactory.getHouses(function(data){
     $scope.houses = data;
