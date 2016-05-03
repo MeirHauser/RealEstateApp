@@ -31,7 +31,7 @@
             <img class = 'google_image' src="https://maps.googleapis.com/maps/api/streetview?size=300x300&amp;fov=40&amp;location={{ house.image }}&amp;pitch=-0.76&amp;key=AIzaSyDgF_uSIGIONjVyUIPmr1iK_oA8cX8hzFk"> 
           </a>
           <p>{{ house.city + ', ' + house.state | uppercase}}</p>
-          <p>Created on: {{ house.created_at | date }}</p>
+          <p>Created: {{ house.created_at | date }}</p>
         </div>
         <a href="house/{{ house.ID }}" class = 'details'>view details</a>
       </div>

@@ -71,9 +71,17 @@
                 <label for="city">City:</label>
   			        <input type = 'text' name = 'city' class="form-control">
               </div>
+              <?php include(dirname(__DIR__).'/helpers/SiteFunctions.php'); ?>
+              <?php $states = getStates(); ?>
               <div class="form-group">
                 <label for="state">State:</label>
-    			      <input type = 'text' name = 'state' class="form-control">
+    			      <select class="form-control" name = 'state'>
+                  <?php
+                    foreach ($states as $key => $value) { ?>
+                      <option value=<?php echo $key ?>><?php echo $value ?></option>
+                    <?php }
+                  ?>
+                </select>
               </div> 
             </div>
           </div>
