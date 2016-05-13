@@ -23,9 +23,12 @@ img{
 	height: 200px;
 	display: block;
 	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #a{
+	text-align: center;
 	height: 400px;
 	display: inline-block;
 	vertical-align: top;
@@ -129,12 +132,76 @@ img{
 #house_table{
 	display: inline-block;
 	vertical-align: top;
-	width: 30%;
-	margin-left: 15%;
-	margin-right: 10%;
 	margin-top: 30px;
 }
 
+#house_images #street_view{
+	display: inline-block;
+	width: 400px;
+	height: auto;
+}
+
+#house_images #map_view{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#login_container{
+	background-color: #f1f1f1;
+	height: 700px;
+	position: relative;
+}
+
+#login_container #sign_in_box{
+	width: 325px;
+	background-color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+  	transform: translate(-50%, -50%);
+  	padding-left: 10px;
+  	padding-right: 10px;
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+}
+
+#login_container img{
+	position: relative;
+	top: 20px;
+	width: 125px;;
+	height: 125px;
+	border-radius: 50%;
+}
+
+#login_container #login_button{
+	border-radius: 10%;
+	float: right;
+	clear: both;
+}
+
+#login_container #login_header{
+	background-color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#login_container #login_header button{
+	float: right;
+	margin-right: 10px;
+}
+
+#login_container #login_header #logo{
+	margin-top: 5px;
+	margin-left: 5px;
+	font-family: monospace;
+    font-weight: 300;
+    font-size: 22px;
+}
+
+#login_container .sign_up_name{
+	display: none;
+}
+    
 .navbar{
 	background-color: rgba(169, 68, 66, 0.84);
 	height: auto;
@@ -174,6 +241,13 @@ img{
     min-height: 0px;
 }
 
+#overlay {
+    background:rgba(0,0,0,0.3);
+    display:none;
+    width:100%; height:100%;
+    position:absolute; top:0; left:0; z-index:1;
+}
+
 .panel-group{
 	margin-top: 50px;
 	width: 600px;
@@ -204,6 +278,20 @@ img{
 
 #submit_button{
 	margin-left: 67%;
+}
+
+#user_info_box{
+	display: none;
+	width: 325px;
+	background-color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+  	transform: translate(-50%, -50%);
+  	padding-left: 10px;
+  	padding-right: 10px;
+  	padding-top: 20px;
+  	padding-bottom: 20px;
 }
 
 .white{
@@ -268,16 +356,28 @@ img{
     	margin-right: 0px;
     	margin-bottom: 0px;
     }
+    #house_table{
+    	margin-left: 5px;
+    	margin-top: 45px;
+    }
 
 }
 
 @media only screen and (min-width: 480px) {
     .twelve-s { width: 80%; }
-
+    #house_table{
+    	margin-left: 5px;
+    	margin-top: 45px;
+    }
 }
 /*tablet*/
 @media only screen and (min-width: 531px) {
     .six-m { width: 49%; }
+    .table { width: 49% !important; }
+    #house_table{
+    	margin-left: 0px;
+    	margin-top: 30px;
+    }
 }
 /* Small laptop screens */
 @media only screen and (min-width: 768px) {
@@ -295,5 +395,6 @@ img{
 @media only screen and (min-width: 1200px) {
   
 }
+
 
 

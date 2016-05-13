@@ -38,8 +38,10 @@ class Houses extends CI_Controller {
 	{
 		$this->load->model('house');
 		$house = $this->house->get_house($house_id);
+		$bedrooms = $this->house->get_bedrooms($house_id);
 		$info = array(
-			'house' => $house
+			'house' => $house,
+			'bedrooms' => $bedrooms
 			);
 		$this->load->view('house', $info);
 	}
@@ -56,7 +58,8 @@ class Houses extends CI_Controller {
 	public function angularhouses()
 	{
 		$this->load->model('house');
-		$houses = $this->house->get_all_houses(1);
+		$id = $this->session->userdata('user_id');
+		$houses = $this->house->get_all_houses($id);
 		echo json_encode($houses);
 	}
 	public function angularDelete($house_id)

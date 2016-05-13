@@ -47,6 +47,13 @@ $route['delete/(:any)'] = "houses/delete/$1";
 $route['angular'] = "houses/angular";
 $route['angularhouses'] = "houses/angularhouses";
 $route['angular/delete/(:any)'] = "houses/angularDelete/$1";
+$route['welcome'] = "logins";
+$route['login'] = "logins/login";
+$route['sign_up'] = "logins/sign_up";
+$route['log_off'] = "logins/sign_out";
+$route['user_info'] = "logins/user_info";
+$route['get_user_info'] = "logins/get_user_info";
+$route['edit_user_info'] = "logins/edit_user_info";
 $route['404_override'] = '';
 
 
