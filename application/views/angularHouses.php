@@ -37,8 +37,9 @@
       <input type = 'text' ng-model="house_name" class="form-control input-m" placeholder = 'Search Houses'>
       <span class="glyphicon glyphicon-search">
     </div> 
+    <div class = 'text-primary' id = 'create_message' ng-if= "houses.length == 0">CREATE A HOUSE</div>
     <div class="all_houses">
-      <div class="twelve-s six-m four-l three-l house"  ng-repeat="house in houses | filter:house_name | orderBy:'created_at':true">
+      <div class="twelve-s six-m four-l three-l house" ng-repeat="house in houses | filter:house_name | orderBy:'created_at':true">
         <h4 class = 'bg-primary white'>{{ house.address }}
           <a href>
             <span class="glyphicon glyphicon-remove" ng-click='removeHouse(house.ID)'></span>

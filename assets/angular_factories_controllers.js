@@ -44,7 +44,6 @@ my_app.controller('HouseController', function($scope, HouseFactory) {
           var locate = value.address.replace(" ", "+") + ',' + value.city.replace(" ", "+") + ',' + value.state.replace(" ", "+");
           value.image = locate;
         });
-        console.log($scope.houses);
       });
     }
   }
