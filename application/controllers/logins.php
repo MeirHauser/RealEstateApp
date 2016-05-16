@@ -19,13 +19,19 @@ class Logins extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data = array(
+		$id = $this->session->userdata('user_id');
+		if ($id) {
+			redirect('/angular');
+		}
+		else{
+			$data = array(
 			'errors' => $this->session->flashdata('error'),
 			'logout' => $this->session->flashdata('logout'),
 			'login' => $this->session->flashdata('login_message'),
 		);
 		$this->load->view('login', $data);
-		$this->output->enable_profiler(TRUE);
+		}
+		
 	}
 	public function login()
 	{

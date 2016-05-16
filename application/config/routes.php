@@ -54,6 +54,7 @@ $route['log_off'] = "logins/sign_out";
 $route['user_info'] = "logins/user_info";
 $route['get_user_info'] = "logins/get_user_info";
 $route['edit_user_info'] = "logins/edit_user_info";
+$route['error'] = 'houses/error';
 $route['404_override'] = '';
 
 

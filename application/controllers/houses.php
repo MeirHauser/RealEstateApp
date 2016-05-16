@@ -39,16 +39,33 @@ class Houses extends Auth_Controller {
 		$this->load->model('house');
 		$house = $this->house->get_house($house_id);
 		$bedrooms = $this->house->get_bedrooms($house_id);
-		$info = array(
-			'house' => $house,
-			'bedrooms' => $bedrooms
-			);
-		$this->load->view('house', $info);
+		$user_id = $this->session->userdata('user_id');
+		if($house){
+			if ($user_id === $house['user_id']) {
+				$info = array(
+				'house' => $house,
+				'bedrooms' => $bedrooms
+				);
+			$this->load->view('house', $info);
+			}
+			else{
+				redirect("/error");
+			}
+		}
+		else{
+			redirect("/error");
+		}
 	}
 	public function delete($house_id)
 	{
 		$this->load->model('house');
-		$this->house->delete_house($house_id);
+		$user_id = $this->session->userdata('user_id');
+		$house = $this->house->get_house($house_id);
+		if($house){
+			if ($user_id === $house['user_id']){
+				$this->house->delete_house($house_id);
+			}
+		}
 		redirect('/all_houses');
 	}
 	public function angular()
@@ -67,6 +84,9 @@ class Houses extends Auth_Controller {
 		$this->load->model('house');
 		$this->house->delete_house($house_id); 
 		echo json_encode($house_id);
+	}
+	public function error(){
+		$this->load->view('error');
 	}
 }
 

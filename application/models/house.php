@@ -34,7 +34,7 @@
          }
          function get_house($house_id)
          {
-            return $this->db->query("SELECT houses.address, houses.city, houses.state, houses.square_footage, houses.bedroooms, houses.year_built, houses.comments,  houses.created_at AS Created_on,  houses.heating, kitchens.style AS kitchen_style, kitchens.size AS kitchen_size, kitchens.comments AS kitchen_comments FROM houses
+            return $this->db->query("SELECT houses.ID, houses.user_id, houses.address, houses.city, houses.state, houses.square_footage, houses.bedroooms, houses.year_built, houses.comments,  houses.created_at AS Created_on,  houses.heating, kitchens.style AS kitchen_style, kitchens.size AS kitchen_size, kitchens.comments AS kitchen_comments FROM houses
                                      LEFT JOIN kitchens
                                      ON houses.ID = kitchens.house_id
                                      WHERE houses.ID = ?", array($house_id))->row_array();

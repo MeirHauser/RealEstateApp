@@ -9,29 +9,12 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-  <script src='/assets/angular_factories_controllers.js'></script>
-  <script type="text/javascript">
-    $(document).ready(function(e){
-      $('#user_icon').click(function(){
-        $.get( "/get_user_info", function( data ) {
-          $('#edit_first_name').attr("value", data.first_name);
-          $('#edit_last_name').attr("value", data.last_name);
-          $('#edit_email').attr("value", data.email);
-        }, "json");
-        $('#user_info_box').fadeIn(300);
-        $('#user_info_box').css('z-index','9999');
-        $('#overlay').fadeIn(300);
-      })
-      $('#overlay').click(function(){
-        $(this).fadeOut(300);
-        $('#user_info_box').fadeOut(300);
-      })
-    });
-  </script>
+  <script src='/assets/js/angular_factories_controllers.js'></script>
+  <script src="/assets/js/house.js"></script>
 </head>
 <body>
   <?php include(dirname(__FILE__).'/partials/header.html'); ?> 
+
   <div class="" ng-controller = 'HouseController' id = 'container_main_page'>
     <div class="form-group" id = 'search_box'>
       <input type = 'text' ng-model="house_name" class="form-control input-m" placeholder = 'Search Houses'>
@@ -56,6 +39,7 @@
       </div>
     </div>
   </div>
+  
   <?php include(dirname(__FILE__).'/partials/footer.html'); ?> 
 </body>
 </html>

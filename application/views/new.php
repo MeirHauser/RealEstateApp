@@ -8,51 +8,14 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-    $(document).ready(function(){
-      var bedroom_counter = 1;
-      $(".glyphicon-plus").click(function(){
-        bedroom_counter ++;
-        $('#add_bedroom').before('<div class="form-group"><label for="bedroom_' + bedroom_counter + '">Bedroom ' + bedroom_counter + ' Details:</label><input type = "text" name = "bedroom_' + bedroom_counter + '_details" class="form-control"></div>');
-        $('#bedroom_body').find("div:nth-last-child(3)").hide().slideDown();
-        console.log(bedroom_counter);
-      });
-
-      jquerySlideDown = function(element)
-      {
-          $('#' + element ).hide().slideDown();
-      }
-
-      jquerySlideUp = function()
-      {
-          $('#other').slideUp();
-      }
-
-    });
-  </script>
-  <script type="text/javascript">
-    function CheckColors(val){
-      var select=document.getElementById('select');
-      var element=document.getElementById('other');
-      if(val=='other'){
-        //element.style.display='block';
-        element.name = 'heating';
-        select.name = '';
-        jquerySlideDown('other');
-      }
-      else {
-        jquerySlideUp();
-        //element.style.display='none';
-        select.name = 'heating';
-        element.name = '';
-      }
-    }
-  </script> 
+  <script src="/assets/js/house.js"></script>
 </head>
 <body>
   <?php include(dirname(__FILE__).'/partials/header.html'); ?>
+
 	<div id="container">
 		<h2>Add A House</h2>
+    <!-- create form that creates a new house and place form into Bootstrap accordian tabs -->
   	<form action ='submit_house' method = 'post'>
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
@@ -71,6 +34,7 @@
                 <label for="city">City:</label>
   			        <input type = 'text' name = 'city' class="form-control">
               </div>
+              <!-- get array of all states and place in select tag -->
               <?php include(dirname(__DIR__).'/helpers/SiteFunctions.php'); ?>
               <?php $states = getStates(); ?>
               <div class="form-group">
@@ -216,6 +180,7 @@
       <input type = 'submit' value = 'Add House' id = 'submit_button' class ='btn-success'>
     </form>
   </div>
+
   <?php include(dirname(__FILE__).'/partials/footer.html'); ?>
 </body>
 </html>
