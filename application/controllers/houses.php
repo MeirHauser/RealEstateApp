@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+//Auth controller created in application/core/MY_Controller in order to prevent non-user access
 class Houses extends Auth_Controller {
 
 	/**
@@ -23,17 +23,31 @@ class Houses extends Auth_Controller {
 	}
 	public function new_house()
 	{
-		$this->load->view('new');
+		$data = array(
+			'errors' => $this->session->flashdata('error')
+		);
+		$this->load->view('new', $data);
 	}
-	public function submit_house()
+	public function add_house()
 	{
+		$this->load->library("form_validation");
+		$this->form_validation->set_rules("address", "Address", "required");
+		$this->form_validation->set_rules("city", "City", "required");
+		$this->form_validation->set_rules("state", "State", "required");
+		if($this->form_validation->run() === FALSE)
+		{
+			$data = validation_errors();
+			$this->session->set_flashdata('error', $data);
+			redirect('/new');
+		}
+		else{
 		$house = $this->input->post();
-		//var_dump($house);
 		$this->load->model('house');
 		$house_id = $this->house->add_house($house);
-		//var_dump($house_id);
 		redirect('/angular');
+		}
 	}
+	//grab individual house record
 	public function house($house_id)
 	{
 		$this->load->model('house');
@@ -72,6 +86,7 @@ class Houses extends Auth_Controller {
 	{
 		$this->load->view('angularHouses');
 	}
+	//Ajax call to grab all user's houses
 	public function angularhouses()
 	{
 		$this->load->model('house');
@@ -79,12 +94,14 @@ class Houses extends Auth_Controller {
 		$houses = $this->house->get_all_houses($id);
 		echo json_encode($houses);
 	}
+	//Ajax call to delete individual house record
 	public function angularDelete($house_id)
 	{
 		$this->load->model('house');
 		$this->house->delete_house($house_id); 
 		echo json_encode($house_id);
 	}
+	//loads page 'error' page when wrong URL is submitted
 	public function error(){
 		$this->load->view('error');
 	}

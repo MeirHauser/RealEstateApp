@@ -14,6 +14,7 @@
 	<div id = 'login_container'>
 		<div id = 'login_header'>
 			<p id = 'logo' class = 'text-primary'>Real Estate Investor</p>
+			<!-- buttons that enable form to toggle between login and sign up using jQuery-->
 			<div>
 				<button class ='btn-success btn-lg' id = 'login_button_top'>LOGIN</button>
 				<button class ='btn-primary btn-lg' id = 'sign_up_button_top'>SIGN UP</button>

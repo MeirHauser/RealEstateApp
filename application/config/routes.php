@@ -41,7 +41,7 @@
 $route['default_controller'] = "houses";
 $route['all_houses'] = "houses/index";
 $route['new'] = "houses/new_house";
-$route['submit_house'] = "houses/submit_house";
+$route['add_house'] = "houses/add_house";
 $route['house/(:any)'] = "houses/house/$1";
 $route['delete/(:any)'] = "houses/delete/$1";
 $route['angular'] = "houses/angular";

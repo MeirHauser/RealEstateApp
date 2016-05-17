@@ -19,6 +19,7 @@ class Logins extends CI_Controller {
 	 */
 	public function index()
 	{
+		//if already logged in user is redirected to main page
 		$id = $this->session->userdata('user_id');
 		if ($id) {
 			redirect('/angular');
@@ -38,7 +39,6 @@ class Logins extends CI_Controller {
 		$this->load->model('login');
 		$email = mysql_real_escape_string($_POST['email']);
 	 	$password = mysql_real_escape_string($_POST['password']);
-	 	$user_query = "SELECT * FROM users WHERE users.email = '{$email}'";
 	 	$user = $this->login->get_user($email);
 	 	if(!empty($user))
 	 	{
@@ -75,7 +75,6 @@ class Logins extends CI_Controller {
 		}
 		else
 		{
-			$this->output->enable_profiler(TRUE); 
 			$this->load->model('login');
 			$email = mysql_real_escape_string($this->input->post('email'));
 			$password = mysql_real_escape_string($this->input->post('password'));
@@ -90,18 +89,18 @@ class Logins extends CI_Controller {
 				'last_name' => $last_name,
 				'first_name' => $first_name
 			);
-			$user = $this->login->sign_up($user_info);
-			$this->session->set_userdata('user_id', $user);
+			$user_id = $this->login->sign_up($user_info);
+			$this->session->set_userdata('user_id', $user_id);
 	   		redirect('/angular');
 		}
 	}
 	public function sign_out()
 	{
-		$this->output->enable_profiler(TRUE);
 		$this->session->sess_destroy();
 		$this->session->set_flashdata('error', 'you have successfully logged out');
 		redirect('/welcome');
 	}
+	//Ajax call grabbing user info to display when user clicks on user icon
 	public function get_user_info()
 	{
 		$this->load->model('login');

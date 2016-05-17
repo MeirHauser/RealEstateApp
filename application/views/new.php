@@ -14,9 +14,12 @@
   <?php include(dirname(__FILE__).'/partials/header.html'); ?>
 
 	<div id="container">
+    <?php if(!empty($errors)){ ?>
+      <div class = 'alert alert-warning'><?php echo $errors; ?></div>
+    <?php } ?>
 		<h2>Add A House</h2>
     <!-- create form that creates a new house and place form into Bootstrap accordian tabs -->
-  	<form action ='submit_house' method = 'post'>
+  	<form action ='add_house' method = 'post'>
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading accordian_heading">

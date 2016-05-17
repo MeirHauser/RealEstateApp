@@ -18,7 +18,7 @@
 		
 		<h2><?php echo $house['address'] . " " . $house['city'] . ", " . $house['state'] ?></h2> 
 		<!-- grab house address and make it ready to be placed into google image tag -->
-		<div id = 'a' class = 'six-m twelve-s'>
+		<div id = 'google_img' class = 'six-m twelve-s'>
 	  		<?php $address = str_replace(" ","+",$house['address']) . "," . str_replace(" ","+",$house['city']) . "," . str_replace(" ","+",$house['state']); ?>
 		  	<img src="https://maps.googleapis.com/maps/api/streetview?size=400x300&amp;fov=40&amp;location=<?php echo $address ?>&pitch=-0.76&amp;key=AIzaSyDgF_uSIGIONjVyUIPmr1iK_oA8cX8hzFk">
 		  	<img src="https://maps.googleapis.com/maps/api/staticmap?center=<?php echo $address ?>,&zoom=15&size=400x300&maptype=roadmap&markers=color:red%7C<?php echo $address ?>&key=AIzaSyAPk6iNFCYRBFsnbaOZyWrwD9bqUO9y1EI">

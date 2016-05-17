@@ -11,8 +11,10 @@
             $query = "INSERT INTO users (first_name, last_name, email, password, salt, created_at, updated_at) VALUES (?,?,?,?,?,?,?)";
             $values = array($user_info['first_name'], $user_info['last_name'], $user_info['email'], $user_info['password'], $user_info['salt'], date("Y-m-d, H:i:s"), date("Y-m-d, H:i:s")); 
             $this->db->query($query, $values);
+            //perform query and grab user's ID
             return $this->db->insert_id();
         }
+        //Ajax call to get user info when user icon is clicked
         function get_user_info()
         {
             $user_id = $this->session->userdata('user_id');

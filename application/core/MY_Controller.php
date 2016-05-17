@@ -1,4 +1,5 @@
 <?php 
+//prevent access to non-users
 class Auth_Controller extends CI_Controller {
 
     function __construct()

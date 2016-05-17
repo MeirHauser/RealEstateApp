@@ -19,22 +19,6 @@ h2{
 	text-align: center;
 }
 
-img{
-	height: 200px;
-	display: block;
-	margin-bottom: 10px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#a{
-	text-align: center;
-	height: 400px;
-	display: inline-block;
-	vertical-align: top;
-	margin-top: 30px;
-}
-
 .accordian_heading{
 	background-color: #337ab7 !important;
 }
@@ -46,7 +30,6 @@ img{
 
 #all_houses{
 	float: right;
-	/*margin-right: 5%;*/
 	margin-bottom: 10px;
 }
 
@@ -58,10 +41,8 @@ img{
 }
 
 .all_houses .house{
-	/*width: 250px;*/
 	border: 2px solid black;
 	padding: 0px;
-	/*margin-left: 20px;*/
 	margin-top: 10px;	
 	margin: auto;
 	display: inline-block;
@@ -91,6 +72,16 @@ img{
 	float: right;
 }
 
+.all_houses .google_image{
+	display: inline;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	float: right;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
 .bg-primary{
 	padding: 5px;
 	margin: 0px;
@@ -98,6 +89,12 @@ img{
 
 #blue{
 	background-color: #337ab7;
+}
+
+#container .alert{
+	width: 25%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #create_message{
@@ -130,14 +127,20 @@ img{
 	margin-left: 10px;
 }
 
-.google_image{
-	display: inline;
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	float: right;
-	margin-top: 5px;
-	margin-right: 5px;
+#google_img{
+	text-align: center;
+	height: 400px;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 30px;
+}
+
+#google_img img{
+	height: 200px;
+	display: block;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #house_table{
@@ -161,18 +164,6 @@ img{
 	background-color: #f1f1f1;
 	height: 700px;
 	position: relative;
-}
-
-#login_container #sign_in_box{
-	width: 325px;
-	background-color: white;
-	margin-right: auto;
-	margin-left: auto;
-  	padding-left: 10px;
-  	padding-right: 10px;
-  	padding-top: 20px;
-  	padding-bottom: 20px;
-  	overflow: hidden;
 }
 
 #login_container img{
@@ -209,6 +200,18 @@ img{
     font-weight: 300;
     font-size: 22px;
     display: inline-block;
+}
+
+#login_container #sign_in_box{
+	width: 325px;
+	background-color: white;
+	margin-right: auto;
+	margin-left: auto;
+  	padding-left: 10px;
+  	padding-right: 10px;
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+  	overflow: hidden;
 }
 
 #login_container .sign_up_name{
@@ -422,10 +425,7 @@ img{
     	margin-bottom: 5px;
     }
 }
-/* Large laptop screens */
-@media only screen and (min-width: 1200px) {
-  
-}
+
 
 
 
