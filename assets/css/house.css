@@ -92,7 +92,7 @@ h2{
 }
 
 #container .alert{
-	width: 25%;
+	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -167,8 +167,11 @@ h2{
 }
 
 #login_container img{
+	display: block;
 	margin-top: 15px;
 	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
 	width: 125px;
 	height: 125px;
 	border-radius: 50%;
@@ -425,7 +428,3 @@ h2{
     	margin-bottom: 5px;
     }
 }
-
-
-
-
