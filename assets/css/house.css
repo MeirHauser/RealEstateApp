@@ -220,6 +220,11 @@ h2{
 #login_container .sign_up_name{
 	display: none;
 }
+
+#login_container #view_video{
+	display: block;
+	margin: 20px auto;
+}
     
 .navbar{
 	background-color: rgba(169, 68, 66, 0.84);
@@ -313,6 +318,17 @@ h2{
   	padding-bottom: 20px;
 }
 
+#video{
+	width: 50%;
+	display: none;
+	position: absolute;
+	top: 25%;
+	right: 0%;
+	left: 0%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .white{
 	color: white !important;
 }
@@ -355,6 +371,10 @@ h2{
 	font-family: monospace;
 	font-weight: 300;
 	font-size: 22px;
+	}
+
+	#video{
+	width: 80%;
 	}
 
 }

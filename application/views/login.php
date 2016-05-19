@@ -51,6 +51,9 @@
 				<div class = 'alert alert-warning'><?php echo $login; ?></div>
 			<?php } ?>
 		</div>
+		<button id = 'view_video' class ='btn-primary'>View a short video demonstration</button>
 	</div>
+	<div id = 'overlay'></div>
+	<iframe id = 'video' width="560" height="315" src="https://www.youtube.com/embed/qQIxZIhIYKg" frameborder="0" allowfullscreen></iframe>
 </body>
 </html>
